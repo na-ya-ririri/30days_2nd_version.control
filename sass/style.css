@@ -1,0 +1,1623 @@
+@charset "UTF-8";
+/*
+html5doctor.com Reset Stylesheet
+v1.6.1
+Last Updated: 2010-09-17
+Author: Richard Clark - http://richclarkdesign.com
+Twitter: @rich_clark
+*/
+html, body, div, span, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+abbr, address, cite, code,
+del, dfn, em, img, ins, kbd, q, samp,
+small, strong, sub, sup, var,
+b, i,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, figcaption, figure,
+footer, header, hgroup, menu, nav, section, summary,
+time, mark, audio, video {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  outline: 0;
+  font-size: 100%;
+  vertical-align: baseline;
+  background: transparent;
+}
+
+body {
+  line-height: 1;
+}
+
+article, aside, details, figcaption, figure,
+footer, header, hgroup, menu, nav, section {
+  display: block;
+}
+
+ul {
+  list-style: none;
+}
+
+blockquote, q {
+  quotes: none;
+}
+
+blockquote:before, blockquote:after,
+q:before, q:after {
+  content: '';
+  content: none;
+}
+
+a {
+  margin: 0;
+  padding: 0;
+  font-size: 100%;
+  vertical-align: baseline;
+  background: transparent;
+  text-decoration: none;
+}
+
+/* myreset_CSS */
+*, *::before, *::after {
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+}
+
+html, body {
+  /* font-family: “游ゴシック体”, YuGothic, “游ゴシック Medium”, “Yu Gothic Medium”, “游ゴシック”, “Yu Gothic”, sans-serif; */
+  font-family: 'Noto Sans JP', 'ヒラギノ角ゴ', sans-serif;
+  font-size: 62.5%;
+}
+
+.wrap {
+  overflow: hidden;
+  /* 右側の余白消し */
+}
+
+/* ---------------------------------------
+index.html
+
+※なぜか各page(セクション)の.scssから
+編集ができず、style.scssに直接書き込めば
+編集ができる、という状況です
+※とりあえずはお問い合わせフォーム以外は
+スタイル崩れがなかったので、
+このまま(@import "";での読み込み)にしています
+⇢各pageで変更修正し、style.scssで@import"";を
+コメントアウト、コメントアウト解除すれば
+変更修正が適用される
+
+1.header
+2.top
+3.card
+4.news
+5.price
+6.access
+7.contact
+8.footer
+--------------------------------------- */
+/* header------------------------------ */
+.nav {
+  background: #3F51B5;
+  position: fixed;
+  top: 0;
+  width: 100%;
+  z-index: 9999;
+}
+
+.nav .flex {
+  /* ロゴとメニューを横並びにしてinnerの両端揃えに */
+  display: flex;
+  justify-content: space-between;
+  /* 高さを設定して縦にセンタリング */
+  height: 100px;
+  align-items: center;
+}
+
+.nav .nav__inner {
+  width: 1086px;
+  max-width: 100%;
+  margin: 0 auto;
+}
+
+@media screen and (max-width: 365px) {
+  .nav__logo {
+    margin-left: 1rem;
+  }
+}
+
+@media screen and (min-width: 366px) and (max-width: 510px) {
+  .nav__logo {
+    margin-left: 1rem;
+  }
+}
+
+@media screen and (min-width: 511px) and (max-width: 620px) {
+  .nav__logo {
+    margin-left: 1rem;
+  }
+}
+
+@media screen and (min-width: 621px) and (max-width: 768px) {
+  .nav__logo {
+    margin-left: 1rem;
+  }
+}
+
+@media screen and (max-width: 1085px) {
+  .nav__logo {
+    margin-left: 2rem;
+  }
+}
+
+@media screen and (max-width: 365px) {
+  .nav__list {
+    display: none;
+  }
+}
+
+@media screen and (min-width: 366px) and (max-width: 510px) {
+  .nav__list {
+    display: none;
+  }
+}
+
+@media screen and (min-width: 511px) and (max-width: 620px) {
+  .nav__list {
+    display: none;
+  }
+}
+
+@media screen and (min-width: 621px) and (max-width: 768px) {
+  .nav__list {
+    display: none;
+  }
+}
+
+@media screen and (max-width: 1085px) {
+  .nav__list {
+    margin-right: 2rem;
+  }
+}
+
+.nav__list .nav__list--item {
+  display: inline-block;
+  margin-right: 32.5px;
+}
+
+.nav__list .nav__list--item:nth-child(5) {
+  margin-right: 0;
+}
+
+.nav__list .nav__list--item .nav-hover {
+  display: inline-block;
+  color: #FFFFFF;
+  font-family: 'Lato', 'Gill', sans-serif;
+  font-size: 1.6rem;
+  line-height: 2.6rem;
+  /* padding-bottom: 4.5px; //文字と下線に隙間を作る←他のメニューより上にずれる:line-heightを設定してなかったのが原因！ */
+  position: relative;
+  /* transition: 0.2s; 不要っぽいので一旦コメントアウト */
+}
+
+.nav__list .nav__list--item .nav-hover::after {
+  position: absolute;
+  content: '';
+  width: 0;
+  height: 3px;
+  bottom: -2px;
+  left: 0;
+  background: #E81919;
+  transition: width 0.3s;
+  /* プロパティを指定する */
+}
+
+.nav__list .nav__list--item .nav-hover:hover::after {
+  width: 100%;
+}
+
+/* カレント表示用のスタイル。あとで付与するクラスなのでここに記述した。 */
+/* (.current{~ という書き方ではダメで、↓のようにjqueryで指定した、親要素からの書き方で書く) */
+#current-nav li a.current {
+  position: relative;
+  /* transition: 0.2s; 不要っぽいので一旦コメントアウト */
+}
+
+#current-nav li a.current::after {
+  position: absolute;
+  content: '';
+  width: 100%;
+  height: 3px;
+  bottom: -2px;
+  left: 0;
+  background: #E81919;
+  transition: width 0.3s;
+}
+
+/* ------------------------------------ */
+/* top--------------------------------- */
+.top {
+  background: url(../img/header/mainvisual.png) center, center, no-repeat;
+  width: 100%;
+  background-size: cover;
+  height: 700px;
+  position: relative;
+  /* 位置調整 */
+}
+
+.top .inner {
+  position: absolute;
+  /* 位置調整 */
+  top: 235px;
+  /* 通常パターンのように50%と書くと位置が合わない */
+  left: 50%;
+  transform: translateX(-50%);
+  -webkit-transform: translateX(-50%);
+  -ms-transform: translateX(-50%);
+  width: 100%;
+  text-align: center;
+}
+
+.top .inner .top__catch {
+  font-size: 6.8rem;
+  line-height: 10.8rem;
+  margin-bottom: -3px;
+  /* Pixel調整 */
+  color: #333333;
+}
+
+@media screen and (max-width: 365px) {
+  .top .inner .top__catch {
+    width: calc(100% - 1rem);
+    font-size: 2.6rem;
+    line-height: 30px;
+    margin-bottom: 15px;
+  }
+}
+
+@media screen and (min-width: 366px) and (max-width: 510px) {
+  .top .inner .top__catch {
+    width: calc(100% - 1rem);
+    font-size: 3.2rem;
+    line-height: 30px;
+    margin-bottom: 25px;
+  }
+}
+
+@media screen and (min-width: 511px) and (max-width: 620px) {
+  .top .inner .top__catch {
+    width: calc(100% - 1rem);
+    font-size: 4.5rem;
+    line-height: 30px;
+    margin-bottom: 35px;
+  }
+}
+
+@media screen and (min-width: 621px) and (max-width: 768px) {
+  .top .inner .top__catch {
+    width: calc(100% - 1rem);
+    font-size: 5.5rem;
+    line-height: 30px;
+    margin-bottom: 30px;
+  }
+}
+
+.top .inner .top__lead {
+  font-size: 3.8rem;
+  line-height: 6.1rem;
+  color: #333333;
+  font-weight: bold;
+  margin-bottom: 78px;
+}
+
+@media screen and (max-width: 365px) {
+  .top .inner .top__lead {
+    padding: 0 1rem;
+    font-size: 2.3rem;
+    line-height: 30px;
+  }
+}
+
+@media screen and (min-width: 366px) and (max-width: 510px) {
+  .top .inner .top__lead {
+    padding: 0 1rem;
+    font-size: 2.5rem;
+    line-height: 30px;
+  }
+}
+
+@media screen and (min-width: 511px) and (max-width: 620px) {
+  .top .inner .top__lead {
+    padding: 0 1rem;
+    font-size: 3rem;
+    line-height: 30px;
+  }
+}
+
+@media screen and (min-width: 621px) and (max-width: 768px) {
+  .top .inner .top__lead {
+    padding: 0 1rem;
+    font-size: 3.5rem;
+    line-height: 30px;
+  }
+}
+
+.top .inner .top__contact {
+  display: inline-block;
+  font-size: 3.8rem;
+  line-height: 6.1rem;
+  background-color: #3F51B5;
+  color: #FFFFFF;
+  padding: 10px 81px;
+  border-radius: 12px;
+  box-shadow: 0px 3px 6px #D6D6D6;
+  margin: 0 auto;
+}
+
+.top .inner .top__contact:hover {
+  opacity: 0.85;
+}
+
+@media screen and (max-width: 365px) {
+  .top .inner .top__contact {
+    width: calc(100% - 10%);
+    font-size: 2.0rem;
+    line-height: 4rem;
+  }
+}
+
+@media screen and (min-width: 366px) and (max-width: 510px) {
+  .top .inner .top__contact {
+    width: calc(100% - 18%);
+    font-size: 2.3rem;
+  }
+}
+
+@media screen and (min-width: 511px) and (max-width: 620px) {
+  .top .inner .top__contact {
+    width: calc(100% - 30%);
+    font-size: 2.8rem;
+  }
+}
+
+/* ------------------------------------ */
+/* card-------------------------------- */
+.card {
+  background-color: #EFEFEF;
+  padding-top: 55px;
+  padding-bottom: 120px;
+}
+
+.card .inner {
+  width: 1086px;
+  max-width: 100%;
+  margin: 0 auto;
+}
+
+.card .inner .card__heading {
+  text-align: center;
+  font-family: 'Lato', 'Gill', sans-serif;
+  font-size: 6.0rem;
+  line-height: 9.6rem;
+  color: #333333;
+  padding-bottom: 39px;
+  margin-bottom: 68px;
+  position: relative;
+  /* border-bottom: 5px solid $color-card-border; h2要素と長さが違う線を指定したい場合、borderではできない▶疑似要素 */
+}
+
+.card .inner .card__heading::before {
+  position: absolute;
+  content: '';
+  left: 50%;
+  bottom: 0px;
+  /*下線の上下位置調整*/
+  display: inline-block;
+  width: 76px;
+  /*下線の幅*/
+  height: 5px;
+  /*下線の太さ*/
+  -moz-transform: translateX(-50%);
+  -webkit-transform: translateX(-50%);
+  -ms-transform: translateX(-50%);
+  transform: translate(-50%);
+  /*位置調整*/
+  background-color: #3F51B5;
+  /*下線の色*/
+}
+
+.card-list {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+@media screen and (max-width: 767px) {
+  .card-list {
+    flex-direction: column;
+    /* スマホ幅で縦1列並びに */
+    align-items: center;
+  }
+}
+
+.card-list .card-list__item {
+  background-color: #FFFFFF;
+  padding: 16px 16px 35px 16px;
+  border-radius: 4px;
+  margin: 0 30px 22px 0;
+  width: calc(100% / 3 - 60px / 3);
+  /* 余白30×2=60pxを3つのアイテムに均等に分け、1アイテム幅の100%/3から引けば余白は常に一定にかつアイテム幅を可変にできる */
+}
+
+.card-list .card-list__item:nth-child(3n) {
+  margin-right: 0;
+}
+
+@media screen and (max-width: 767px) {
+  .card-list .card-list__item {
+    width: 100%;
+    min-width: 80%;
+    /* アイテム幅が小さくなりすぎないように自分で入れてみた */
+    margin: 0 0 20px 0;
+  }
+  .card-list .card-list__item:nth-child(3) {
+    margin-left: 30px;
+    /* 下のtabの指定でずれた分を直す */
+  }
+}
+
+@media screen and (max-width: 1085px) {
+  .card-list .card-list__item {
+    width: calc(100% / 2 - 60px / 2);
+    /* 2列で余白を2等分 */
+  }
+  .card-list .card-list__item:nth-child(3n) {
+    margin-right: 30px;
+    /* 親元の指定で0になっているのを余白足す */
+  }
+  .card-list .card-list__item:nth-child(2n) {
+    margin-right: 0;
+    /* 2列の時の余白をなくす */
+  }
+}
+
+.card-list .card-list__item .card-list__item--img {
+  width: 100%;
+  /* 画面を小さくしたときに画像も小さくなるように */
+}
+
+.card-list .card-list__item .card-list__item--title {
+  font-size: 2rem;
+  color: #6F7579;
+  line-height: 2.4rem;
+  margin-top: 24px;
+  /* margin-bottom: 20px; margin-topとmargin-bottomはどちらか片方で統一する */
+}
+
+.card-list .card-list__item .card-list__item--text {
+  font-size: 1.6rem;
+  color: #6F7579;
+  line-height: 2.4rem;
+  margin-top: 20px;
+  /* ↑margin-topとmargin-bottomはどちらか片方で統一するためにこちらにmargin-topを追加 */
+}
+
+/* 参考URL: https://haniwaman.com/calc/ */
+/* ------------------------------------ */
+/* news -resposive1-------------------- */
+.news {
+  background-color: #FFFFFF;
+  padding-top: 57px;
+  padding-bottom: 33px;
+}
+
+.news .inner .news__heading {
+  text-align: center;
+  font-family: 'Lato', 'Gill', sans-serif;
+  font-size: 6.0rem;
+  line-height: 9.6rem;
+  color: #333333;
+  padding-bottom: 30px;
+  margin-bottom: 88px;
+  position: relative;
+}
+
+.news .inner .news__heading::before {
+  position: absolute;
+  content: '';
+  left: 50%;
+  bottom: 0px;
+  /*下線の上下位置調整*/
+  display: inline-block;
+  width: 76px;
+  /*下線の幅*/
+  height: 5px;
+  /*下線の太さ*/
+  -moz-transform: translateX(-50%);
+  -webkit-transform: translateX(-50%);
+  -ms-transform: translateX(-50%);
+  transform: translate(-50%);
+  /*位置調整*/
+  background-color: #3F51B5;
+  /*下線の色*/
+}
+
+.news-list {
+  width: 838px;
+  /* これないとborderがinner幅まで伸びちゃう */
+  margin: 0 auto;
+  /* これないとinnerの左寄せになっちゃう */
+}
+
+.news-list:not(:last-child) {
+  margin: 0 auto 16px;
+  /* moreリンクがあるときのmargin-bottom */
+}
+
+@media screen and (max-width: 850px) {
+  .news-list {
+    width: 90%;
+    /* innerじゃなくてこちらに指定しないと幅が縮まらない */
+  }
+}
+
+.news-list .news-list__item {
+  display: flex;
+  font-size: 1.6rem;
+  line-height: 2.6rem;
+  color: #333333;
+  padding-bottom: 16.3px;
+  height: auto;
+}
+
+.news-list .news-list__item:not(:last-child) {
+  border-bottom: 1px solid #707070;
+  margin-bottom: 18.5px;
+}
+
+.news-list .news-list__item .news-list__date {
+  font-family: 'Lato', 'Gill', sans-serif;
+  margin-left: 4.2px;
+}
+
+.news-list .news-list__item .news-list__tab {
+  display: flex;
+  /* これないと横並びにならない */
+}
+
+.news-list .news-list__item .news-list__tab .news-list__label--label-1 {
+  display: inline-block;
+  width: 100px;
+  height: 30px;
+  line-height: 30px;
+  font-weight: bold;
+  color: #FFFFFF;
+  border-radius: 6px;
+  text-align: center;
+  margin: 0 30px;
+  background-color: #666666;
+}
+
+.news-list .news-list__item .news-list__tab .news-list__label--label-1:hover {
+  opacity: 0.8;
+}
+
+@media screen and (max-width: 850px) {
+  .news-list .news-list__item .news-list__tab .news-list__label--label-1 {
+    display: inline-block;
+    line-height: 2.4rem;
+    width: 100px;
+    height: 30px;
+    line-height: 30px;
+    font-weight: bold;
+    color: #FFFFFF;
+    border-radius: 6px;
+    margin-left: 0px;
+    /* ラベルの余白を調整 */
+  }
+}
+
+.news-list .news-list__item .news-list__tab .news-list__label--label-2 {
+  display: inline-block;
+  width: 100px;
+  height: 30px;
+  line-height: 30px;
+  font-weight: bold;
+  color: #FFFFFF;
+  border-radius: 6px;
+  text-align: center;
+  margin: 0 30px;
+  background-color: #3F51B5;
+}
+
+.news-list .news-list__item .news-list__tab .news-list__label--label-2:hover {
+  opacity: 0.8;
+}
+
+@media screen and (max-width: 850px) {
+  .news-list .news-list__item .news-list__tab .news-list__label--label-2 {
+    display: inline-block;
+    line-height: 2.4rem;
+    width: 100px;
+    height: 30px;
+    line-height: 30px;
+    font-weight: bold;
+    color: #FFFFFF;
+    border-radius: 6px;
+    margin-left: 0px;
+    /* ラベルの余白を調整 */
+  }
+}
+
+.news-list .news-list__item .news-list__tab .news-list__label--label-3 {
+  display: inline-block;
+  width: 100px;
+  height: 30px;
+  line-height: 30px;
+  font-weight: bold;
+  color: #FFFFFF;
+  border-radius: 6px;
+  text-align: center;
+  margin: 0 30px;
+  background-color: #E81919;
+}
+
+.news-list .news-list__item .news-list__tab .news-list__label--label-3:hover {
+  opacity: 0.8;
+}
+
+@media screen and (max-width: 850px) {
+  .news-list .news-list__item .news-list__tab .news-list__label--label-3 {
+    display: inline-block;
+    line-height: 2.4rem;
+    width: 100px;
+    height: 30px;
+    line-height: 30px;
+    font-weight: bold;
+    color: #FFFFFF;
+    border-radius: 6px;
+    margin-left: 0px;
+    /* ラベルの余白を調整 */
+  }
+}
+
+.news-list .news-list__item .news-list__tab .news-list__title {
+  color: #333333;
+  display: inline-block;
+  /* 複数行がずれないように */
+  width: 576px;
+  margin-right: 9.5px;
+}
+
+.news-list .news-list__item .news-list__tab .news-list__title:hover {
+  opacity: 0.65;
+}
+
+@media screen and (max-width: 850px) {
+  .news-list .news-list__item .news-list__tab .news-list__title {
+    display: inline;
+    /* レスポンシブで改行されるように */
+  }
+}
+
+@media screen and (max-width: 850px) {
+  .news-list .news-list__item .news-list__tab {
+    margin-top: 10px;
+  }
+}
+
+@media screen and (max-width: 850px) {
+  .news-list .news-list__item {
+    display: block;
+    /* レスポンシブ縦並び */
+  }
+}
+
+.news-list__link {
+  text-align: center;
+}
+
+.news-list__link .link-button {
+  font-family: 'Lato', 'Gill', sans-serif;
+  font-weight: 700;
+  font-size: 1.6rem;
+  line-height: 2.6rem;
+  color: #E81919;
+  display: inline-block;
+  position: relative;
+}
+
+.news-list__link .link-button:hover {
+  opacity: 0.65;
+}
+
+.news-list__link .link-button::after {
+  position: absolute;
+  content: '';
+  display: inline-block;
+  width: 100%;
+  height: 100%;
+  background: url(../img/news/news-arrow.svg) no-repeat;
+  margin-top: 9px;
+  margin-left: 6.5px;
+}
+
+/* ------------------------------------ */
+/* price------------------------------- */
+.price {
+  background-color: #EFEFEF;
+  padding-top: 45px;
+  padding-bottom: 102px;
+}
+
+@media screen and (max-width: 1110px) {
+  .price {
+    padding-bottom: 0px;
+  }
+}
+
+.price .inner {
+  width: 1088px;
+  max-width: 100%;
+  margin: 0 auto;
+}
+
+.price .inner .price__heading {
+  text-align: center;
+  font-family: 'Lato', 'Gill', sans-serif;
+  font-size: 6.0rem;
+  line-height: 9.6rem;
+  color: #333333;
+  padding-bottom: 31px;
+  margin-bottom: 76px;
+  position: relative;
+}
+
+.price .inner .price__heading::before {
+  position: absolute;
+  content: '';
+  left: 50%;
+  bottom: 0px;
+  /*下線の上下位置調整*/
+  display: inline-block;
+  width: 76px;
+  /*下線の幅*/
+  height: 5px;
+  /*下線の太さ*/
+  -moz-transform: translateX(-50%);
+  -webkit-transform: translateX(-50%);
+  -ms-transform: translateX(-50%);
+  transform: translate(-50%);
+  /*位置調整*/
+  background-color: #3F51B5;
+  /*下線の色*/
+}
+
+.price__inner--wrapper {
+  width: 1088px;
+  margin: 0 auto;
+  display: flex;
+}
+
+@media screen and (max-width: 1110px) {
+  .price__inner--wrapper {
+    background-image: url(../img/table/price-img.png);
+    /* タブレット幅以下では画像を背景に */
+    background-size: cover;
+    background-color: rgba(255, 255, 255, 0.5);
+    background-blend-mode: lighten;
+    width: 100%;
+    height: 500px;
+    display: flex;
+    align-items: center;
+  }
+}
+
+.price__wrapper--img .price-img {
+  margin-right: 122px;
+}
+
+@media screen and (max-width: 1110px) {
+  .price__wrapper--img .price-img {
+    display: none;
+    /* タブレット幅以下では画像を背景にするためnone */
+  }
+}
+
+@media screen and (max-width: 1110px) {
+  .price__wrapper--table {
+    margin: 0 auto;
+  }
+}
+
+@media screen and (max-width: 1110px) {
+  .price__wrapper--table .price-table-wrap {
+    width: 100%;
+    margin: 0 auto;
+  }
+}
+
+.price-table {
+  border: 1px solid #707070;
+  border-collapse: collapse;
+  font-size: 1.6rem;
+  line-height: 1.1rem;
+  color: #333333;
+  width: 605px;
+  height: 270px;
+  table-layout: fixed;
+  margin-bottom: 16px;
+}
+
+@media screen and (max-width: 1110px) {
+  .price-table {
+    width: 90%;
+    margin: 0 auto;
+  }
+}
+
+.price-table th {
+  font-family: 'Lato', 'Gill', sans-serif;
+  border: 1px solid #707070;
+  color: #FFFFFF;
+  background-color: #999999;
+  vertical-align: middle;
+}
+
+.price-table th:first-child {
+  width: 160px;
+}
+
+@media screen and (max-width: 550px) {
+  .price-table th:first-child {
+    width: 90px;
+  }
+}
+
+.price-table td {
+  font-family: 'Noto Sans JP', 'ヒラギノ角ゴ', sans-serif;
+  border: 1px solid #707070;
+  background-color: #FFFFFF;
+  text-align: right;
+  vertical-align: middle;
+  padding-right: 15px;
+}
+
+.price-table td.font-special {
+  font-size: 1.6rem;
+  line-height: 2.1rem;
+  padding-right: 14.5px;
+}
+
+.price-table td.font-special .special {
+  color: #E81919;
+}
+
+.price-table td.font-special .special-desc {
+  font-size: 1.4rem;
+  line-height: 2.2rem;
+}
+
+@media screen and (max-width: 365px) {
+  .price-table td.font-special .special-desc {
+    font-size: 1.2rem;
+  }
+}
+
+@media screen and (max-width: 1110px) {
+  .price-table-contact {
+    width: 90%;
+    margin: 0 auto;
+  }
+}
+
+.price-table-contact .price-table-contact__text {
+  font-size: 1.57rem;
+  line-height: 2.6rem;
+  color: #333333;
+}
+
+.price-table-contact .price-table-contact__text .price-table-contact__link {
+  font-size: 1.6rem;
+  line-height: 2.6rem;
+  color: #333333;
+  text-decoration: underline;
+}
+
+.price-table-contact .price-table-contact__text .price-table-contact__link:hover {
+  opacity: 0.7;
+}
+
+@media screen and (max-width: 1110px) {
+  .price-table-contact .price-table-contact__text {
+    margin-top: 20px;
+  }
+}
+
+/* ------------------------------------ */
+/* access------------------------------ */
+.access {
+  background-color: #FFFFFF;
+  padding-top: 55px;
+  padding-bottom: 90px;
+}
+
+.access .inner {
+  width: 800px;
+  max-width: 100%;
+  margin: 0 auto;
+}
+
+.access .inner .access__heading {
+  text-align: center;
+  font-family: 'Lato', 'Gill', sans-serif;
+  font-size: 6.0rem;
+  line-height: 9.6rem;
+  color: #333333;
+  padding-bottom: 30px;
+  margin-bottom: 105px;
+  position: relative;
+}
+
+.access .inner .access__heading::before {
+  position: absolute;
+  content: '';
+  left: 50%;
+  bottom: 0px;
+  /*下線の上下位置調整*/
+  display: inline-block;
+  width: 76px;
+  /*下線の幅*/
+  height: 5px;
+  /*下線の太さ*/
+  -moz-transform: translateX(-50%);
+  -webkit-transform: translateX(-50%);
+  -ms-transform: translateX(-50%);
+  transform: translate(-50%);
+  /*位置調整*/
+  background-color: #3F51B5;
+  /*下線の色*/
+}
+
+.access__inner--wrapper {
+  width: 100%;
+  margin: 0 auto;
+}
+
+.access-map {
+  position: relative;
+  height: 0;
+  width: 100%;
+  padding-bottom: 50%;
+  overflow: hidden;
+  margin: 0 auto;
+}
+
+@media screen and (max-width: 850px) {
+  .access-map {
+    width: 95%;
+    /* 小さくしたときに左右に余白持たす */
+  }
+}
+
+.access-map iframe {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  border: none;
+  /* HTMLの<iframe>におけるframeborder="0"の記述がエラーだったためこちらに記述 */
+}
+
+.aceess-text {
+  margin-top: 32px;
+  width: 800px;
+}
+
+.aceess-text .aceess-text__table {
+  font-size: 1.6rem;
+  line-height: 2.6rem;
+  color: #333333;
+  margin-left: 38px;
+  margin-bottom: 30px;
+}
+
+@media screen and (max-width: 365px) {
+  .aceess-text .aceess-text__table {
+    font-size: 1.4rem;
+    margin-left: 0;
+  }
+}
+
+@media screen and (max-width: 850px) {
+  .aceess-text .aceess-text__table {
+    margin-left: 2rem;
+  }
+}
+
+.aceess-text .aceess-text__table tr {
+  height: 32px;
+}
+
+.aceess-text .aceess-text__table tr th {
+  font-weight: normal;
+  text-align: left;
+  padding-right: 52px;
+}
+
+.access-google-link {
+  text-align: center;
+}
+
+.access-google-link .google-link {
+  font-size: 2.0rem;
+  font-weight: bold;
+  line-height: 3.2rem;
+  line-height: 56px;
+  color: #FFFFFF;
+  background-color: #3F51B5;
+  border-radius: 12px;
+  display: inline-block;
+  width: 305px;
+  height: 56px;
+  position: relative;
+}
+
+.access-google-link .google-link:hover {
+  opacity: 0.8;
+}
+
+.access-google-link .google-link::after {
+  position: absolute;
+  content: '';
+  background: url(../img/table/access-arrow.svg) no-repeat;
+  display: inline-block;
+  width: 100%;
+  height: 100%;
+  margin-left: 31px;
+  top: 19px;
+}
+
+/* ------------------------------------ */
+/* contact----------------------------- */
+.contact {
+  background-color: #EFEFEF;
+  padding-top: 55px;
+  padding-bottom: 120px;
+}
+
+.contact .inner {
+  width: 800px;
+  max-width: 100%;
+  margin: 0 auto;
+}
+
+.contact .inner .contact__heading {
+  text-align: center;
+  font-family: 'Lato', 'Gill', sans-serif;
+  font-size: 6.0rem;
+  line-height: 9.6rem;
+  color: #333333;
+  padding-bottom: 30px;
+  margin-bottom: 45px;
+  position: relative;
+}
+
+.contact .inner .contact__heading::before {
+  position: absolute;
+  content: '';
+  left: 50%;
+  bottom: 0px;
+  /*下線の上下位置調整*/
+  display: inline-block;
+  width: 76px;
+  /*下線の幅*/
+  height: 5px;
+  /*下線の太さ*/
+  -moz-transform: translateX(-50%);
+  -webkit-transform: translateX(-50%);
+  -ms-transform: translateX(-50%);
+  transform: translate(-50%);
+  /*位置調整*/
+  background-color: #3F51B5;
+  /*下線の色*/
+}
+
+.contact-form--wrapper {
+  background-color: #FFFFFF;
+  padding: 60px 43px 40px 52px;
+  /* フォント変更後、あまりにずれていたのでbottomを60pxから変更した */
+}
+
+.contact-form--wrapper .contact-form {
+  font-size: 1.8rem;
+  line-height: 2.9rem;
+  color: #333333;
+}
+
+.contact-form--wrapper .contact-form .m-top {
+  margin-top: 16px;
+  /* 項目名の位置調整 */
+}
+
+@media screen and (max-width: 800px) {
+  .contact-form--wrapper .contact-form .m-top {
+    display: block;
+    margin-top: 0;
+    text-align: left;
+    margin-bottom: 10px;
+  }
+}
+
+.contact-form--wrapper .inputs::placeholder {
+  color: #CCCCCC;
+}
+
+.contact-form--wrapper .inputs:-ms-input-placeholder {
+  color: #CCCCCC;
+}
+
+.contact-form--wrapper .inputs::-webkit-input-placeholder, .contact-form--wrapper .inputs:-moz-placeholder, .contact-form--wrapper .inputs::-moz-placeholder, .contact-form--wrapper .inputs::-ms-input-placeholder {
+  color: #CCCCCC;
+}
+
+.contact-form--wrapper .inputs.inputs-common {
+  border: 1px solid #707070;
+  width: 528px;
+  height: 60px;
+}
+
+@media screen and (max-width: 800px) {
+  .contact-form--wrapper .inputs.inputs-common {
+    width: 100%;
+  }
+}
+
+.contact-form--wrapper .inputs.inputs-content {
+  border: 1px solid #707070;
+  width: 528px;
+  height: 240px;
+  resize: none;
+  /* 角の//消し */
+}
+
+@media screen and (max-width: 800px) {
+  .contact-form--wrapper .inputs.inputs-content {
+    width: 100%;
+  }
+}
+
+.contact-form--wrapper .contact-form__name {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 49px;
+  position: relative;
+}
+
+@media screen and (max-width: 800px) {
+  .contact-form--wrapper .contact-form__name {
+    display: block;
+    text-align: center;
+  }
+}
+
+.contact-form--wrapper .contact-form__name .must-label {
+  position: absolute;
+  content: '';
+  top: 50px;
+  left: 3px;
+  font-size: 1.4rem;
+  line-height: 2.2rem;
+  color: #FFFFFF;
+  background-color: #E81919;
+  border-radius: 12px;
+  width: 45.98px;
+  height: 22.72px;
+  text-align: center;
+}
+
+@media screen and (max-width: 800px) {
+  .contact-form--wrapper .contact-form__name .must-label {
+    top: 0;
+    left: 70px;
+  }
+}
+
+.contact-form--wrapper .contact-form__mail {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 53px;
+  position: relative;
+}
+
+@media screen and (max-width: 800px) {
+  .contact-form--wrapper .contact-form__mail {
+    display: block;
+    text-align: center;
+  }
+}
+
+.contact-form--wrapper .contact-form__mail .must-label {
+  position: absolute;
+  content: '';
+  top: 50px;
+  left: 3px;
+  font-size: 1.4rem;
+  line-height: 2.2rem;
+  color: #FFFFFF;
+  background-color: #E81919;
+  border-radius: 12px;
+  width: 45.98px;
+  height: 22.72px;
+  text-align: center;
+}
+
+@media screen and (max-width: 800px) {
+  .contact-form--wrapper .contact-form__mail .must-label {
+    top: 0;
+    left: 140px;
+  }
+}
+
+.contact-form--wrapper .contact-form__type {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 48px;
+}
+
+@media screen and (max-width: 800px) {
+  .contact-form--wrapper .contact-form__type {
+    display: block;
+    text-align: center;
+  }
+}
+
+.contact-form--wrapper .contact-form__type .inputs-type {
+  background: transparent url(../img/form/select-arrow.svg) no-repeat center right 20px/20px 20px;
+  border: 1px solid #707070;
+  color: #CCCCCC;
+  width: 528px;
+  height: 60px;
+}
+
+@media screen and (max-width: 800px) {
+  .contact-form--wrapper .contact-form__type .inputs-type {
+    width: 100%;
+  }
+}
+
+.contact-form--wrapper .contact-form__content {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 39.5px;
+}
+
+@media screen and (max-width: 800px) {
+  .contact-form--wrapper .contact-form__content {
+    display: block;
+    text-align: center;
+  }
+}
+
+.contact-form--wrapper .contact-form__radio {
+  margin-left: 5px;
+  margin-bottom: 45px;
+}
+
+@media screen and (max-width: 800px) {
+  .contact-form--wrapper .contact-form__radio {
+    display: flex;
+    flex-direction: column;
+    /* 縦並びに */
+    margin-bottom: 25px;
+  }
+}
+
+.contact-form--wrapper .contact-form__radio .radio-label {
+  font-size: 1.6rem;
+}
+
+@media screen and (max-width: 800px) {
+  .contact-form--wrapper .contact-form__radio .radio-label {
+    margin-bottom: 12px;
+    /* 縦並びにした際の各ラジオボタンの間隔 */
+  }
+}
+
+.contact-form--wrapper .contact-form__radio .inputs-radio + span {
+  margin: 0 25px 0 0;
+  /* 各項目の右側の余白 */
+  padding: 0 0 0 40px;
+  /* ○と項目の間の余白 */
+}
+
+.contact-form--wrapper .contact-form__radio .inputs-radio + span::before {
+  border: 1px solid #707070;
+  height: 30px;
+  width: 30px;
+}
+
+.contact-form--wrapper .contact-form__radio .inputs-radio + span::after {
+  background: #3F51B5;
+  height: 18px;
+  left: 6px;
+  padding: 6px;
+  /* ●と○の間 */
+  transition: opacity 0.1s ease 0s;
+  width: 18px;
+}
+
+.contact-form--wrapper .contact-form__privacy {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 27px;
+}
+
+.contact-form--wrapper .contact-form__privacy .inputs-checkbox + span {
+  margin: 0 -8px 0;
+  padding: 0 0 0 60px;
+  /* □と文章(項目)の間の余白 */
+}
+
+@media screen and (max-width: 321px) {
+  .contact-form--wrapper .contact-form__privacy .inputs-checkbox + span {
+    padding: 0 0 0 43px;
+  }
+}
+
+.contact-form--wrapper .contact-form__privacy .inputs-checkbox + span::before {
+  border: 1px solid #707070;
+  height: 30px;
+  top: -22px;
+  width: 30px;
+}
+
+@media screen and (max-width: 321px) {
+  .contact-form--wrapper .contact-form__privacy .inputs-checkbox + span::before {
+    height: 25px;
+    width: 25px;
+  }
+}
+
+.contact-form--wrapper .contact-form__privacy .inputs-checkbox + span::after {
+  -webkit-transform: translateY(-50%);
+  background: url(../img/form/check.svg) no-repeat;
+  background-size: contain;
+  /* サイズ指定 */
+  height: 30px;
+  /* 数値でないと表示されない。100%はダメ */
+  margin-top: -0.2em;
+  transform: translateY(-50%);
+  transition: opacity 0.1s ease 0s;
+  width: 30px;
+  /* 数値でないと表示されない。100%はダメ */
+}
+
+@media screen and (max-width: 321px) {
+  .contact-form--wrapper .contact-form__privacy .inputs-checkbox + span::after {
+    height: 25px;
+    width: 25px;
+  }
+}
+
+.contact-form--wrapper .contact-form__privacy .privacy-text {
+  font-size: 1.6rem;
+  line-height: 2.6rem;
+  color: #333333;
+}
+
+@media screen and (max-width: 321px) {
+  .contact-form--wrapper .contact-form__privacy .privacy-text {
+    font-size: 1.3rem;
+  }
+}
+
+.contact-form--wrapper .contact-form__privacy .privacy-text .privacy-content {
+  color: #333333;
+  text-decoration: underline;
+}
+
+.contact-form--wrapper .contact-form__privacy .privacy-text .privacy-content:hover {
+  opacity: 0.7;
+}
+
+.contact-form--wrapper .contact-form__button {
+  text-align: center;
+}
+
+.contact-form--wrapper .contact-form__button .submit-btn {
+  display: inline-block;
+  font-size: 2.2rem;
+  line-height: 3.6rem;
+  color: #FFFFFF;
+  background-color: #3F51B5;
+  border-radius: 12px;
+  width: 261px;
+  height: 56px;
+  padding: 9px 0;
+  left: -3px;
+  /* perfectpixelで合わせると必要 */
+  position: relative;
+}
+
+@media screen and (max-width: 321px) {
+  .contact-form--wrapper .contact-form__button .submit-btn {
+    left: -2rem;
+  }
+}
+
+.contact-form--wrapper .contact-form__button .submit-btn::after {
+  position: absolute;
+  content: '';
+  background: url(../img/form/contact-arrow.svg) no-repeat;
+  width: 100%;
+  height: 100%;
+  margin-left: 58px;
+  top: 18px;
+}
+
+.contact-form--wrapper .contact-form__button .submit-btn:hover {
+  opacity: 0.85;
+}
+
+/* _contact.scss内では修正変更できず、form_reset.cssをHTMLで読み込んでいるとスタイルが崩れる模様。
+⇢style.scssにリセットCSSも含めて直接スタイルを書き込めば崩れはなくなる
+⇢さらに、リセットCSSも含めた下記コードを_contact.scssに書き込み、style.scssにて@import "page/7-contact/contact";としてもスタイル崩れはなくなる。(ただし、先に_contact.scss内に下記コードを書き、その後style.scssに@import "page/7-contact/contact";と記述しないとスタイルは反映されない)
+⇢リセットCSSと分けてスタイルのコードを書くと崩れていた原因は、スタイリングの方の
+コードに & が不足していたこと！！！！！
+？_contact.scss内では修正変更できないのにここにコード書いて_contact.scssに書いたら反映されるのはなぜか？ */
+/* ------------------------------------ */
+/* footer------------------------------*/
+.footer {
+  background: linear-gradient(180deg, #666666 0%, #333333 100%);
+  background: -moz-linear-gradient(top, #666666 0%, #333333 100%);
+  background: -webkit-linear-gradient(top, #666666 0%, #333333 100%);
+  color: #FFFFFF;
+  position: relative;
+  /* .footer__top-linkリンクのため */
+}
+
+.footer .inner {
+  display: flex;
+  justify-content: center;
+  font-size: 1.6rem;
+  line-height: 2.6rem;
+  padding: 74px 0 86px;
+}
+
+@media screen and (max-width: 1080px) {
+  .footer .inner {
+    flex-direction: column;
+    align-items: center;
+    padding: 74px 0 60px;
+  }
+}
+
+@media screen and (max-width: 580px) {
+  .footer__company {
+    display: flex;
+    flex-direction: column;
+    order: 1;
+    /* 縦の表示順番をかえてみた */
+  }
+}
+
+@media screen and (max-width: 1080px) {
+  .footer__company {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 30px;
+  }
+}
+
+.footer__company--logo {
+  margin-bottom: 20px;
+}
+
+.footer__company--address, .footer__company--tel {
+  margin-left: 3px;
+}
+
+.footer__company--address {
+  margin-bottom: 9px;
+}
+
+@media screen and (max-width: 1080px) {
+  .footer__company--desc {
+    text-align: left;
+    margin-left: 20px;
+  }
+}
+
+.footer__menu--list {
+  display: flex;
+  margin: 7px 224px 0 159px;
+}
+
+@media screen and (max-width: 1080px) {
+  .footer__menu--list {
+    justify-content: center;
+    margin: 0 0 30px 0;
+  }
+}
+
+.footer__menu--list .footer__menu--list-item {
+  display: inline-block;
+}
+
+.footer__menu--list .footer__menu--list-item:not(:last-child) {
+  margin-right: 30px;
+}
+
+@media screen and (max-width: 580px) {
+  .footer__menu--list .footer__menu--list-item:not(:last-child) {
+    margin-right: 25px;
+  }
+}
+
+@media screen and (max-width: 365px) {
+  .footer__menu--list .footer__menu--list-item:not(:last-child) {
+    margin-right: 20px;
+  }
+}
+
+.footer__menu--list .footer__menu--list-item .footer__menu--list-link {
+  font-family: 'Lato', 'Gill', sans-serif;
+  color: #FFFFFF;
+}
+
+.footer__menu--list .footer__menu--list-item .footer__menu--list-link:hover {
+  opacity: 0.7;
+}
+
+.footer__sns-link {
+  margin-top: 7px;
+}
+
+@media screen and (max-width: 580px) {
+  .footer__sns-link {
+    margin-bottom: 30px;
+  }
+}
+
+.footer__sns-link .footer__sns-link--item:hover {
+  opacity: 0.7;
+}
+
+.footer__sns-link .footer__sns-link--item:not(:last-child) {
+  margin-right: 12px;
+}
+
+.footer__end {
+  text-align: center;
+}
+
+.footer__end .cp-right {
+  font-family: 'Lato', 'Gill', sans-serif;
+  font-size: 1.4rem;
+  line-height: 2.2rem;
+  display: inline-block;
+  margin-bottom: 31px;
+}
+
+@media screen and (max-width: 580px) {
+  .footer__end .cp-right {
+    margin-bottom: 110px;
+  }
+}
+
+.footer__top-link {
+  position: absolute;
+  /* .footerをporに */
+  right: 19px;
+  bottom: 14px;
+}
+
+.footer__top-link:hover {
+  opacity: 0.7;
+}
+
+/* ------------------------------------ */
