@@ -3,7 +3,7 @@
 
 .footer {
   background: linear-gradient(180deg, $color-footer-back1 0%, $color-footer-back2 100%);
-  background: -moz-linear-gradient(top, $color-footer-back1 0%, $color-footer-back2 100%);
+  /* background: -moz-linear-gradient(top, $color-footer-back1 0%, $color-footer-back2 100%); 不要*/
   background: -webkit-linear-gradient(top, $color-footer-back1 0%, $color-footer-back2 100%);
   color: $color-white;
   position: relative; /* .footer__top-linkリンクのため */

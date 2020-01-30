@@ -40,7 +40,7 @@
   display: inline-block;
   width: 76px; /*下線の幅*/
   height: 5px; /*下線の太さ*/
-  -moz-transform: translateX(-50%);
+  /* -moz-transform: translateX(-50%); 不要*/
   -webkit-transform: translateX(-50%);
   -ms-transform: translateX(-50%);
   transform: translate(-50%); /*位置調整*/

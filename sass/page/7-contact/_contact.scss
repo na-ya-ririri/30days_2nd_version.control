@@ -167,6 +167,7 @@
               }
               & + span::after {
                 -webkit-transform: translateY(-50%);
+                -ms-transform: translateY(-50%); /* 追加 */
                 background: url(../img/form/check.svg) no-repeat;
                 background-size: contain; /* サイズ指定 */
                 height: 30px; /* 数値でないと表示されない。100%はダメ */
