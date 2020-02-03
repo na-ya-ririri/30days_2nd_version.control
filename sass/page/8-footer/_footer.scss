@@ -19,43 +19,42 @@
       padding: 74px 0 60px;
     }
   } //.inner
-} //.footer
-    .footer__company {
-      @include mqSP-FOOTER {
-        display: flex;
-        flex-direction: column;
-        order: 1; /* 縦の表示順番をかえてみた */
-      }
-      @include mqTAB-FOOTER {
-        display: flex;
-        justify-content: center;
-        margin-bottom: 30px;
-      }
-    } //.footer__company
-      .footer__company--logo {
-        margin-bottom: 20px;
-      }
-      .footer__company--address,.footer__company--tel {
-        margin-left: 3px;
-      }
-      .footer__company--address {
-        margin-bottom: 9px;
-      }
-    // } //.footer__company ネスト整理のために↑に移動
-    .footer__company--desc {
+  &__company {
+    @include mqSP-FOOTER {
+      display: flex;
+      flex-direction: column;
+      order: 1; /* 縦の表示順番をかえてみた */
+    }
+    @include mqTAB-FOOTER {
+      display: flex;
+      justify-content: center;
+      margin-bottom: 30px;
+    }
+  } //.footer__company
+    &__company--logo {
+      margin-bottom: 20px;
+    }
+    &__company--address, &__company--tel {
+      margin-left: 3px;
+    }
+    &__company--address {
+      margin-bottom: 9px;
+    }
+  // } //.footer__company
+    &__company--desc {
       @include mqTAB-FOOTER {
         text-align: left;
         margin-left: 20px;
       }
     } //.footer__company--desc
-    .footer__menu--list {
+    &__menu--list {
       display: flex;
       margin: 7px 224px 0 159px;
       @include mqTAB-FOOTER {
         justify-content: center;
         margin: 0 0 30px 0;
       }
-      .footer__menu--list-item {
+      &-item {
         display: inline-block;
         &:not(:last-child) {
           margin-right: 30px;
@@ -75,12 +74,12 @@
         }
       }
     } //.footer__menu--list
-    .footer__sns-link {
+    &__sns-link {
       margin-top: 7px;
       @include mqSP-FOOTER {
         margin-bottom: 30px;
       }
-      .footer__sns-link--item {
+      &--item {
         &:hover {
           opacity: 0.7;
         }
@@ -89,8 +88,8 @@
         }
       }
     } //.footer__sns-link
-  // } //.inner ネスト整理のために↑に移動
-  .footer__end {
+  // } //.inner
+  &__end {
     text-align: center;
     .cp-right {
       font-family: 'Lato', 'Gill', sans-serif;
@@ -103,7 +102,7 @@
       }
     }
   } //.footer__end
-  .footer__top-link {
+  &__top-link {
     position: absolute; /* .footerをporに */
     right: 19px;
     bottom: 14px;
@@ -111,4 +110,4 @@
       opacity: 0.7;
     }
   }
-// } //.footer ネスト整理のために↑に移動
+} //.footer

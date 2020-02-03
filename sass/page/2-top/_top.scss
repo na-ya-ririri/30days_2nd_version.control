@@ -1,6 +1,7 @@
 @charset "utf-8";
 
 
+// top 通常版---------------------------------
 .top {
   background: url(../img/header/mainvisual-min.png) center, center, no-repeat;
   width: 100%;
@@ -16,7 +17,8 @@
     -ms-transform : translateX(-50%);
     width: 100%;
     text-align: center;
-    .top__catch {
+  } //.inner
+    &__catch {
       font-size: 6.8rem;
       line-height: 10.8rem;
       margin-bottom: -3px; /* Pixel調整 */
@@ -34,7 +36,7 @@
         @include top-catch(5.5rem, 30px);
       }
     } //.top__catch
-    .top__lead {
+    &__lead {
       font-size: 3.8rem;
       line-height: 6.1rem;
       color: $color-black;
@@ -53,7 +55,7 @@
         @include top-lead(3.5rem);
       }
     } //.top__lead
-    .top__contact {
+    &__contact {
       display: inline-block;
       font-size: 3.8rem;
       line-height: 6.1rem;
@@ -80,5 +82,6 @@
         font-size: 2.8rem;
       }
     } //.top__contact
-  } //.inner
+  // } //.inner ネスト整理のため移動
 } //.top
+// top 通常版---------------------------------

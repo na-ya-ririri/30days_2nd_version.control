@@ -125,7 +125,7 @@ index.html
           align-items: center;
 }
 
-.nav .nav__inner {
+.nav__inner {
   width: 1086px;
   max-width: 100%;
   margin: 0 auto;
@@ -191,16 +191,16 @@ index.html
   }
 }
 
-.nav__list .nav__list--item {
+.nav__list--item {
   display: inline-block;
   margin-right: 32.5px;
 }
 
-.nav__list .nav__list--item:nth-child(5) {
+.nav__list--item:nth-child(5) {
   margin-right: 0;
 }
 
-.nav__list .nav__list--item .nav-hover {
+.nav__list--item .nav-hover {
   display: inline-block;
   color: #FFFFFF;
   font-family: 'Lato', 'Gill', sans-serif;
@@ -211,7 +211,7 @@ index.html
   /* transition: 0.2s; 不要っぽいので一旦コメントアウト */
 }
 
-.nav__list .nav__list--item .nav-hover::after {
+.nav__list--item .nav-hover::after {
   position: absolute;
   content: '';
   width: 0;
@@ -224,7 +224,7 @@ index.html
   /* プロパティを指定する */
 }
 
-.nav__list .nav__list--item .nav-hover:hover::after {
+.nav__list--item .nav-hover:hover::after {
   width: 100%;
 }
 
@@ -248,9 +248,15 @@ index.html
 }
 
 /* ------------------------------------ */
-/* top--------------------------------- */
-.top {
-  background: url(../img/header/mainvisual-min.png) center, center, no-repeat;
+/* top slick--------------------------- */
+.slick-container {
+  width: 100%;
+  height: 700px;
+  position: relative;
+}
+
+.slick-container .slide1 {
+  background: url(../img/carousel/png/mainvisual-min.png) center, center, no-repeat;
   width: 100%;
   background-size: cover;
   height: 700px;
@@ -258,7 +264,43 @@ index.html
   /* 位置調整 */
 }
 
-.top .inner {
+.slick-container .slide2 {
+  background: url(../img/carousel/png/andrew-small-EfhCUc_fjrU-unsplash-min.png) center, center, no-repeat;
+  width: 100%;
+  background-size: cover;
+  height: 700px;
+  position: relative;
+  /* 位置調整 */
+}
+
+.slick-container .slide3 {
+  background: url(../img/carousel/png/h-k-HG419n_6Fro-unsplash-min.png) center, center, no-repeat;
+  width: 100%;
+  background-size: cover;
+  height: 700px;
+  position: relative;
+  /* 位置調整 */
+}
+
+.slick-container .slide4 {
+  background: url(../img/carousel/png/jen-theodore-56UZ5G6uV4w-unsplash-min.png) center, center, no-repeat;
+  width: 100%;
+  background-size: cover;
+  height: 700px;
+  position: relative;
+  /* 位置調整 */
+}
+
+.slick-container .slide5 {
+  background: url(../img/carousel/png/rose-2378156_1920-min.jpg) center, center, no-repeat;
+  width: 100%;
+  background-size: cover;
+  height: 700px;
+  position: relative;
+  /* 位置調整 */
+}
+
+.slick-container .inner {
   position: absolute;
   /* 位置調整 */
   top: 235px;
@@ -271,7 +313,7 @@ index.html
   text-align: center;
 }
 
-.top .inner .top__catch {
+.slick-container .inner .top__catch {
   font-size: 6.8rem;
   line-height: 10.8rem;
   margin-bottom: -3px;
@@ -280,7 +322,7 @@ index.html
 }
 
 @media screen and (max-width: 365px) {
-  .top .inner .top__catch {
+  .slick-container .inner .top__catch {
     width: calc(100% - 1rem);
     font-size: 2.6rem;
     line-height: 30px;
@@ -289,7 +331,7 @@ index.html
 }
 
 @media screen and (min-width: 366px) and (max-width: 510px) {
-  .top .inner .top__catch {
+  .slick-container .inner .top__catch {
     width: calc(100% - 1rem);
     font-size: 3.2rem;
     line-height: 30px;
@@ -298,7 +340,7 @@ index.html
 }
 
 @media screen and (min-width: 511px) and (max-width: 620px) {
-  .top .inner .top__catch {
+  .slick-container .inner .top__catch {
     width: calc(100% - 1rem);
     font-size: 4.5rem;
     line-height: 30px;
@@ -307,7 +349,7 @@ index.html
 }
 
 @media screen and (min-width: 621px) and (max-width: 768px) {
-  .top .inner .top__catch {
+  .slick-container .inner .top__catch {
     width: calc(100% - 1rem);
     font-size: 5.5rem;
     line-height: 30px;
@@ -315,7 +357,7 @@ index.html
   }
 }
 
-.top .inner .top__lead {
+.slick-container .inner .top__lead {
   font-size: 3.8rem;
   line-height: 6.1rem;
   color: #333333;
@@ -324,7 +366,7 @@ index.html
 }
 
 @media screen and (max-width: 365px) {
-  .top .inner .top__lead {
+  .slick-container .inner .top__lead {
     padding: 0 1rem;
     font-size: 2.3rem;
     line-height: 30px;
@@ -332,7 +374,7 @@ index.html
 }
 
 @media screen and (min-width: 366px) and (max-width: 510px) {
-  .top .inner .top__lead {
+  .slick-container .inner .top__lead {
     padding: 0 1rem;
     font-size: 2.5rem;
     line-height: 30px;
@@ -340,7 +382,7 @@ index.html
 }
 
 @media screen and (min-width: 511px) and (max-width: 620px) {
-  .top .inner .top__lead {
+  .slick-container .inner .top__lead {
     padding: 0 1rem;
     font-size: 3rem;
     line-height: 30px;
@@ -348,14 +390,14 @@ index.html
 }
 
 @media screen and (min-width: 621px) and (max-width: 768px) {
-  .top .inner .top__lead {
+  .slick-container .inner .top__lead {
     padding: 0 1rem;
     font-size: 3.5rem;
     line-height: 30px;
   }
 }
 
-.top .inner .top__contact {
+.slick-container .inner .top__contact {
   display: inline-block;
   font-size: 3.8rem;
   line-height: 6.1rem;
@@ -368,12 +410,12 @@ index.html
   margin: 0 auto;
 }
 
-.top .inner .top__contact:hover {
+.slick-container .inner .top__contact:hover {
   opacity: 0.85;
 }
 
 @media screen and (max-width: 365px) {
-  .top .inner .top__contact {
+  .slick-container .inner .top__contact {
     width: calc(100% - 10%);
     font-size: 2.0rem;
     line-height: 4rem;
@@ -381,17 +423,74 @@ index.html
 }
 
 @media screen and (min-width: 366px) and (max-width: 510px) {
-  .top .inner .top__contact {
+  .slick-container .inner .top__contact {
     width: calc(100% - 18%);
     font-size: 2.3rem;
   }
 }
 
 @media screen and (min-width: 511px) and (max-width: 620px) {
-  .top .inner .top__contact {
+  .slick-container .inner .top__contact {
     width: calc(100% - 30%);
     font-size: 2.8rem;
   }
+}
+
+.slick-container .slide-arrow {
+  width: 75px;
+  height: 75px;
+  z-index: 999;
+  /* prevボタンのみうまく表示されなかったのを解消 参考：https://travelogue.jp/blog/archives/4757.html*/
+  cursor: pointer;
+}
+
+@media screen and (max-width: 580px) {
+  .slick-container .slide-arrow {
+    display: none;
+  }
+}
+
+.slick-container .prev-arrow {
+  position: absolute;
+  top: 50%;
+  margin-top: -15px;
+  left: 158px;
+}
+
+@media screen and (max-width: 1110px) {
+  .slick-container .prev-arrow {
+    margin-top: -20px;
+    left: 20px;
+  }
+}
+
+.slick-container .next-arrow {
+  position: absolute;
+  top: 50%;
+  margin-top: -15px;
+  right: 159px;
+}
+
+@media screen and (max-width: 1110px) {
+  .slick-container .next-arrow {
+    margin-top: -20px;
+    right: 20px;
+  }
+}
+
+.slick-container .slick-dots {
+  /* ページネーションの親クラス(ul) */
+  bottom: 19px;
+}
+
+.slick-container .slick-dots li button:before {
+  font-size: 16px;
+  /* width,heightだと外枠の大きさに指定がついてしまう */
+  color: #FFFFFF9E;
+}
+
+.slick-container .slick-dots li.slick-active button::before {
+  color: #2F7DC8;
 }
 
 /* ------------------------------------ */
@@ -468,7 +567,7 @@ index.html
   }
 }
 
-.card-list .card-list__item {
+.card-list__item {
   background-color: #FFFFFF;
   padding: 16px 16px 35px 16px;
   border-radius: 4px;
@@ -477,44 +576,44 @@ index.html
   /* 余白30×2=60pxを3つのアイテムに均等に分け、1アイテム幅の100%/3から引けば余白は常に一定にかつアイテム幅を可変にできる */
 }
 
-.card-list .card-list__item:nth-child(3n) {
+.card-list__item:nth-child(3n) {
   margin-right: 0;
 }
 
 @media screen and (max-width: 767px) {
-  .card-list .card-list__item {
+  .card-list__item {
     width: 100%;
     min-width: 80%;
     /* アイテム幅が小さくなりすぎないように自分で入れてみた */
     margin: 0 0 20px 0;
   }
-  .card-list .card-list__item:nth-child(3) {
+  .card-list__item:nth-child(3) {
     margin-left: 30px;
     /* 下のtabの指定でずれた分を直す */
   }
 }
 
 @media screen and (max-width: 1085px) {
-  .card-list .card-list__item {
+  .card-list__item {
     width: calc(100% / 2 - 60px / 2);
     /* 2列で余白を2等分 */
   }
-  .card-list .card-list__item:nth-child(3n) {
+  .card-list__item:nth-child(3n) {
     margin-right: 30px;
     /* 親元の指定で0になっているのを余白足す */
   }
-  .card-list .card-list__item:nth-child(2n) {
+  .card-list__item:nth-child(2n) {
     margin-right: 0;
     /* 2列の時の余白をなくす */
   }
 }
 
-.card-list .card-list__item .card-list__item--img {
+.card-list__item--img {
   width: 100%;
   /* 画面を小さくしたときに画像も小さくなるように */
 }
 
-.card-list .card-list__item .card-list__item--title {
+.card-list__item--title {
   font-size: 2rem;
   color: #6F7579;
   line-height: 2.4rem;
@@ -522,7 +621,7 @@ index.html
   /* margin-bottom: 20px; margin-topとmargin-bottomはどちらか片方で統一する */
 }
 
-.card-list .card-list__item .card-list__item--text {
+.card-list__item--text {
   font-size: 1.6rem;
   color: #6F7579;
   line-height: 2.4rem;
@@ -588,7 +687,7 @@ index.html
   }
 }
 
-.news-list .news-list__item {
+.news-list__item {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -600,17 +699,24 @@ index.html
   height: auto;
 }
 
-.news-list .news-list__item:not(:last-child) {
+.news-list__item:not(:last-child) {
   border-bottom: 1px solid #707070;
   margin-bottom: 18.5px;
 }
 
-.news-list .news-list__item .news-list__date {
+@media screen and (max-width: 850px) {
+  .news-list__item {
+    display: block;
+    /* レスポンシブ縦並び */
+  }
+}
+
+.news-list__item .news-list__date {
   font-family: 'Lato', 'Gill', sans-serif;
   margin-left: 4.2px;
 }
 
-.news-list .news-list__item .news-list__tab {
+.news-list__item .news-list__tab {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -618,7 +724,13 @@ index.html
   /* これないと横並びにならない */
 }
 
-.news-list .news-list__item .news-list__tab .news-list__label--label-1 {
+@media screen and (max-width: 850px) {
+  .news-list__item .news-list__tab {
+    margin-top: 10px;
+  }
+}
+
+.news-list__item .news-list__tab .news-list__label--label-1 {
   display: inline-block;
   width: 100px;
   height: 30px;
@@ -631,12 +743,12 @@ index.html
   background-color: #666666;
 }
 
-.news-list .news-list__item .news-list__tab .news-list__label--label-1:hover {
+.news-list__item .news-list__tab .news-list__label--label-1:hover {
   opacity: 0.8;
 }
 
 @media screen and (max-width: 850px) {
-  .news-list .news-list__item .news-list__tab .news-list__label--label-1 {
+  .news-list__item .news-list__tab .news-list__label--label-1 {
     display: inline-block;
     line-height: 2.4rem;
     width: 100px;
@@ -650,7 +762,7 @@ index.html
   }
 }
 
-.news-list .news-list__item .news-list__tab .news-list__label--label-2 {
+.news-list__item .news-list__tab .news-list__label--label-2 {
   display: inline-block;
   width: 100px;
   height: 30px;
@@ -663,12 +775,12 @@ index.html
   background-color: #3F51B5;
 }
 
-.news-list .news-list__item .news-list__tab .news-list__label--label-2:hover {
+.news-list__item .news-list__tab .news-list__label--label-2:hover {
   opacity: 0.8;
 }
 
 @media screen and (max-width: 850px) {
-  .news-list .news-list__item .news-list__tab .news-list__label--label-2 {
+  .news-list__item .news-list__tab .news-list__label--label-2 {
     display: inline-block;
     line-height: 2.4rem;
     width: 100px;
@@ -682,7 +794,7 @@ index.html
   }
 }
 
-.news-list .news-list__item .news-list__tab .news-list__label--label-3 {
+.news-list__item .news-list__tab .news-list__label--label-3 {
   display: inline-block;
   width: 100px;
   height: 30px;
@@ -695,12 +807,12 @@ index.html
   background-color: #E81919;
 }
 
-.news-list .news-list__item .news-list__tab .news-list__label--label-3:hover {
+.news-list__item .news-list__tab .news-list__label--label-3:hover {
   opacity: 0.8;
 }
 
 @media screen and (max-width: 850px) {
-  .news-list .news-list__item .news-list__tab .news-list__label--label-3 {
+  .news-list__item .news-list__tab .news-list__label--label-3 {
     display: inline-block;
     line-height: 2.4rem;
     width: 100px;
@@ -714,7 +826,7 @@ index.html
   }
 }
 
-.news-list .news-list__item .news-list__tab .news-list__title {
+.news-list__item .news-list__tab .news-list__title {
   color: #333333;
   display: inline-block;
   /* 複数行がずれないように */
@@ -722,35 +834,22 @@ index.html
   margin-right: 9.5px;
 }
 
-.news-list .news-list__item .news-list__tab .news-list__title:hover {
+.news-list__item .news-list__tab .news-list__title:hover {
   opacity: 0.65;
 }
 
 @media screen and (max-width: 850px) {
-  .news-list .news-list__item .news-list__tab .news-list__title {
+  .news-list__item .news-list__tab .news-list__title {
     display: inline;
     /* レスポンシブで改行されるように */
   }
 }
 
-@media screen and (max-width: 850px) {
-  .news-list .news-list__item .news-list__tab {
-    margin-top: 10px;
-  }
-}
-
-@media screen and (max-width: 850px) {
-  .news-list .news-list__item {
-    display: block;
-    /* レスポンシブ縦並び */
-  }
-}
-
-.news-list__link {
+.news .news-list__link {
   text-align: center;
 }
 
-.news-list__link .link-button {
+.news .news-list__link .link-button {
   font-family: 'Lato', 'Gill', sans-serif;
   font-weight: 700;
   font-size: 1.6rem;
@@ -760,11 +859,11 @@ index.html
   position: relative;
 }
 
-.news-list__link .link-button:hover {
+.news .news-list__link .link-button:hover {
   opacity: 0.65;
 }
 
-.news-list__link .link-button::after {
+.news .news-list__link .link-button::after {
   position: absolute;
   content: '';
   display: inline-block;
@@ -872,13 +971,13 @@ index.html
 }
 
 @media screen and (max-width: 1110px) {
-  .price__wrapper--table .price-table-wrap {
+  .price .price-table-wrap {
     width: 100%;
     margin: 0 auto;
   }
 }
 
-.price-table {
+.price .price-table {
   border: 1px solid #707070;
   border-collapse: collapse;
   font-size: 1.6rem;
@@ -891,13 +990,13 @@ index.html
 }
 
 @media screen and (max-width: 1110px) {
-  .price-table {
+  .price .price-table {
     width: 90%;
     margin: 0 auto;
   }
 }
 
-.price-table th {
+.price .price-table th {
   font-family: 'Lato', 'Gill', sans-serif;
   border: 1px solid #707070;
   color: #FFFFFF;
@@ -905,17 +1004,17 @@ index.html
   vertical-align: middle;
 }
 
-.price-table th:first-child {
+.price .price-table th:first-child {
   width: 160px;
 }
 
 @media screen and (max-width: 550px) {
-  .price-table th:first-child {
+  .price .price-table th:first-child {
     width: 90px;
   }
 }
 
-.price-table td {
+.price .price-table td {
   font-family: 'Noto Sans JP', 'ヒラギノ角ゴ', sans-serif;
   border: 1px solid #707070;
   background-color: #FFFFFF;
@@ -924,53 +1023,53 @@ index.html
   padding-right: 15px;
 }
 
-.price-table td.font-special {
+.price .price-table td.font-special {
   font-size: 1.6rem;
   line-height: 2.1rem;
   padding-right: 14.5px;
 }
 
-.price-table td.font-special .special {
+.price .price-table td.font-special .special {
   color: #E81919;
 }
 
-.price-table td.font-special .special-desc {
+.price .price-table td.font-special .special-desc {
   font-size: 1.4rem;
   line-height: 2.2rem;
 }
 
 @media screen and (max-width: 365px) {
-  .price-table td.font-special .special-desc {
+  .price .price-table td.font-special .special-desc {
     font-size: 1.2rem;
   }
 }
 
 @media screen and (max-width: 1110px) {
-  .price-table-contact {
+  .price .price-table-contact {
     width: 90%;
     margin: 0 auto;
   }
 }
 
-.price-table-contact .price-table-contact__text {
+.price .price-table-contact__text {
   font-size: 1.57rem;
   line-height: 2.6rem;
   color: #333333;
 }
 
-.price-table-contact .price-table-contact__text .price-table-contact__link {
+.price .price-table-contact__text .price-table-contact__link {
   font-size: 1.6rem;
   line-height: 2.6rem;
   color: #333333;
   text-decoration: underline;
 }
 
-.price-table-contact .price-table-contact__text .price-table-contact__link:hover {
+.price .price-table-contact__text .price-table-contact__link:hover {
   opacity: 0.7;
 }
 
 @media screen and (max-width: 1110px) {
-  .price-table-contact .price-table-contact__text {
+  .price .price-table-contact__text {
     margin-top: 20px;
   }
 }
@@ -1050,12 +1149,12 @@ index.html
   /* HTMLの<iframe>におけるframeborder="0"の記述がエラーだったためこちらに記述 */
 }
 
-.aceess-text {
+.access .aceess-text {
   margin-top: 32px;
   width: 800px;
 }
 
-.aceess-text .aceess-text__table {
+.access .aceess-text__table {
   font-size: 1.6rem;
   line-height: 2.6rem;
   color: #333333;
@@ -1064,23 +1163,23 @@ index.html
 }
 
 @media screen and (max-width: 365px) {
-  .aceess-text .aceess-text__table {
+  .access .aceess-text__table {
     font-size: 1.4rem;
     margin-left: 0;
   }
 }
 
 @media screen and (max-width: 850px) {
-  .aceess-text .aceess-text__table {
+  .access .aceess-text__table {
     margin-left: 2rem;
   }
 }
 
-.aceess-text .aceess-text__table tr {
+.access .aceess-text__table tr {
   height: 32px;
 }
 
-.aceess-text .aceess-text__table tr th {
+.access .aceess-text__table tr th {
   font-weight: normal;
   text-align: left;
   padding-right: 52px;
@@ -1169,19 +1268,19 @@ index.html
   /* フォント変更後、あまりにずれていたのでbottomを60pxから変更した */
 }
 
-.contact-form--wrapper .contact-form {
+.contact-form {
   font-size: 1.8rem;
   line-height: 2.9rem;
   color: #333333;
 }
 
-.contact-form--wrapper .contact-form .m-top {
+.contact-form .m-top {
   margin-top: 16px;
   /* 項目名の位置調整 */
 }
 
 @media screen and (max-width: 800px) {
-  .contact-form--wrapper .contact-form .m-top {
+  .contact-form .m-top {
     display: block;
     margin-top: 0;
     text-align: left;
@@ -1189,43 +1288,43 @@ index.html
   }
 }
 
-.contact-form--wrapper .inputs::-webkit-input-placeholder {
+.contact-form .inputs::-webkit-input-placeholder {
   color: #CCCCCC;
 }
 
-.contact-form--wrapper .inputs:-ms-input-placeholder {
+.contact-form .inputs:-ms-input-placeholder {
   color: #CCCCCC;
 }
 
-.contact-form--wrapper .inputs::-ms-input-placeholder {
+.contact-form .inputs::-ms-input-placeholder {
   color: #CCCCCC;
 }
 
-.contact-form--wrapper .inputs::placeholder {
+.contact-form .inputs::placeholder {
   color: #CCCCCC;
 }
 
-.contact-form--wrapper .inputs:-ms-input-placeholder {
+.contact-form .inputs:-ms-input-placeholder {
   color: #CCCCCC;
 }
 
-.contact-form--wrapper .inputs::-webkit-input-placeholder, .contact-form--wrapper .inputs:-moz-placeholder, .contact-form--wrapper .inputs::-moz-placeholder, .contact-form--wrapper .inputs::-ms-input-placeholder {
+.contact-form .inputs::-webkit-input-placeholder, .contact-form .inputs:-moz-placeholder, .contact-form .inputs::-moz-placeholder, .contact-form .inputs::-ms-input-placeholder {
   color: #CCCCCC;
 }
 
-.contact-form--wrapper .inputs.inputs-common {
+.contact-form .inputs.inputs-common {
   border: 1px solid #707070;
   width: 528px;
   height: 60px;
 }
 
 @media screen and (max-width: 800px) {
-  .contact-form--wrapper .inputs.inputs-common {
+  .contact-form .inputs.inputs-common {
     width: 100%;
   }
 }
 
-.contact-form--wrapper .inputs.inputs-content {
+.contact-form .inputs.inputs-content {
   border: 1px solid #707070;
   width: 528px;
   height: 240px;
@@ -1234,12 +1333,12 @@ index.html
 }
 
 @media screen and (max-width: 800px) {
-  .contact-form--wrapper .inputs.inputs-content {
+  .contact-form .inputs.inputs-content {
     width: 100%;
   }
 }
 
-.contact-form--wrapper .contact-form__name {
+.contact-form__name {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -1253,13 +1352,13 @@ index.html
 }
 
 @media screen and (max-width: 800px) {
-  .contact-form--wrapper .contact-form__name {
+  .contact-form__name {
     display: block;
     text-align: center;
   }
 }
 
-.contact-form--wrapper .contact-form__name .must-label {
+.contact-form__name .must-label {
   position: absolute;
   content: '';
   top: 50px;
@@ -1275,13 +1374,13 @@ index.html
 }
 
 @media screen and (max-width: 800px) {
-  .contact-form--wrapper .contact-form__name .must-label {
+  .contact-form__name .must-label {
     top: 0;
     left: 70px;
   }
 }
 
-.contact-form--wrapper .contact-form__mail {
+.contact-form__mail {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -1295,13 +1394,13 @@ index.html
 }
 
 @media screen and (max-width: 800px) {
-  .contact-form--wrapper .contact-form__mail {
+  .contact-form__mail {
     display: block;
     text-align: center;
   }
 }
 
-.contact-form--wrapper .contact-form__mail .must-label {
+.contact-form__mail .must-label {
   position: absolute;
   content: '';
   top: 50px;
@@ -1317,13 +1416,13 @@ index.html
 }
 
 @media screen and (max-width: 800px) {
-  .contact-form--wrapper .contact-form__mail .must-label {
+  .contact-form__mail .must-label {
     top: 0;
     left: 140px;
   }
 }
 
-.contact-form--wrapper .contact-form__type {
+.contact-form__type {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -1336,13 +1435,13 @@ index.html
 }
 
 @media screen and (max-width: 800px) {
-  .contact-form--wrapper .contact-form__type {
+  .contact-form__type {
     display: block;
     text-align: center;
   }
 }
 
-.contact-form--wrapper .contact-form__type .inputs-type {
+.contact-form__type .inputs-type {
   background: transparent url(../img/form/select-arrow.svg) no-repeat center right 20px/20px 20px;
   border: 1px solid #707070;
   color: #CCCCCC;
@@ -1351,12 +1450,12 @@ index.html
 }
 
 @media screen and (max-width: 800px) {
-  .contact-form--wrapper .contact-form__type .inputs-type {
+  .contact-form__type .inputs-type {
     width: 100%;
   }
 }
 
-.contact-form--wrapper .contact-form__content {
+.contact-form__content {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -1369,19 +1468,19 @@ index.html
 }
 
 @media screen and (max-width: 800px) {
-  .contact-form--wrapper .contact-form__content {
+  .contact-form__content {
     display: block;
     text-align: center;
   }
 }
 
-.contact-form--wrapper .contact-form__radio {
+.contact-form__radio {
   margin-left: 5px;
   margin-bottom: 45px;
 }
 
 @media screen and (max-width: 800px) {
-  .contact-form--wrapper .contact-form__radio {
+  .contact-form__radio {
     display: -webkit-box;
     display: -webkit-flex;
     display: -ms-flexbox;
@@ -1396,31 +1495,31 @@ index.html
   }
 }
 
-.contact-form--wrapper .contact-form__radio .radio-label {
+.contact-form__radio .radio-label {
   font-size: 1.6rem;
 }
 
 @media screen and (max-width: 800px) {
-  .contact-form--wrapper .contact-form__radio .radio-label {
+  .contact-form__radio .radio-label {
     margin-bottom: 12px;
     /* 縦並びにした際の各ラジオボタンの間隔 */
   }
 }
 
-.contact-form--wrapper .contact-form__radio .inputs-radio + span {
+.contact-form__radio .inputs-radio + span {
   margin: 0 25px 0 0;
   /* 各項目の右側の余白 */
   padding: 0 0 0 40px;
   /* ○と項目の間の余白 */
 }
 
-.contact-form--wrapper .contact-form__radio .inputs-radio + span::before {
+.contact-form__radio .inputs-radio + span::before {
   border: 1px solid #707070;
   height: 30px;
   width: 30px;
 }
 
-.contact-form--wrapper .contact-form__radio .inputs-radio + span::after {
+.contact-form__radio .inputs-radio + span::after {
   background: #3F51B5;
   height: 18px;
   left: 6px;
@@ -1431,7 +1530,7 @@ index.html
   width: 18px;
 }
 
-.contact-form--wrapper .contact-form__privacy {
+.contact-form__privacy {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -1443,19 +1542,19 @@ index.html
   margin-bottom: 27px;
 }
 
-.contact-form--wrapper .contact-form__privacy .inputs-checkbox + span {
+.contact-form__privacy .inputs-checkbox + span {
   margin: 0 -8px 0;
   padding: 0 0 0 60px;
   /* □と文章(項目)の間の余白 */
 }
 
 @media screen and (max-width: 321px) {
-  .contact-form--wrapper .contact-form__privacy .inputs-checkbox + span {
+  .contact-form__privacy .inputs-checkbox + span {
     padding: 0 0 0 43px;
   }
 }
 
-.contact-form--wrapper .contact-form__privacy .inputs-checkbox + span::before {
+.contact-form__privacy .inputs-checkbox + span::before {
   border: 1px solid #707070;
   height: 30px;
   top: -22px;
@@ -1463,13 +1562,13 @@ index.html
 }
 
 @media screen and (max-width: 321px) {
-  .contact-form--wrapper .contact-form__privacy .inputs-checkbox + span::before {
+  .contact-form__privacy .inputs-checkbox + span::before {
     height: 25px;
     width: 25px;
   }
 }
 
-.contact-form--wrapper .contact-form__privacy .inputs-checkbox + span::after {
+.contact-form__privacy .inputs-checkbox + span::after {
   -webkit-transform: translateY(-50%);
   -ms-transform: translateY(-50%);
   /* 追加 */
@@ -1487,38 +1586,38 @@ index.html
 }
 
 @media screen and (max-width: 321px) {
-  .contact-form--wrapper .contact-form__privacy .inputs-checkbox + span::after {
+  .contact-form__privacy .inputs-checkbox + span::after {
     height: 25px;
     width: 25px;
   }
 }
 
-.contact-form--wrapper .contact-form__privacy .privacy-text {
+.contact-form__privacy .privacy-text {
   font-size: 1.6rem;
   line-height: 2.6rem;
   color: #333333;
 }
 
 @media screen and (max-width: 321px) {
-  .contact-form--wrapper .contact-form__privacy .privacy-text {
+  .contact-form__privacy .privacy-text {
     font-size: 1.3rem;
   }
 }
 
-.contact-form--wrapper .contact-form__privacy .privacy-text .privacy-content {
+.contact-form__privacy .privacy-text .privacy-content {
   color: #333333;
   text-decoration: underline;
 }
 
-.contact-form--wrapper .contact-form__privacy .privacy-text .privacy-content:hover {
+.contact-form__privacy .privacy-text .privacy-content:hover {
   opacity: 0.7;
 }
 
-.contact-form--wrapper .contact-form__button {
+.contact-form__button {
   text-align: center;
 }
 
-.contact-form--wrapper .contact-form__button .submit-btn {
+.contact-form__button .submit-btn {
   display: inline-block;
   font-size: 2.2rem;
   line-height: 3.6rem;
@@ -1534,12 +1633,12 @@ index.html
 }
 
 @media screen and (max-width: 321px) {
-  .contact-form--wrapper .contact-form__button .submit-btn {
+  .contact-form__button .submit-btn {
     left: -2rem;
   }
 }
 
-.contact-form--wrapper .contact-form__button .submit-btn::after {
+.contact-form__button .submit-btn::after {
   position: absolute;
   content: '';
   background: url(../img/form/contact-arrow.svg) no-repeat;
@@ -1549,7 +1648,7 @@ index.html
   top: 18px;
 }
 
-.contact-form--wrapper .contact-form__button .submit-btn:hover {
+.contact-form__button .submit-btn:hover {
   opacity: 0.85;
 }
 
@@ -1670,32 +1769,32 @@ index.html
   }
 }
 
-.footer__menu--list .footer__menu--list-item {
+.footer__menu--list-item {
   display: inline-block;
 }
 
-.footer__menu--list .footer__menu--list-item:not(:last-child) {
+.footer__menu--list-item:not(:last-child) {
   margin-right: 30px;
 }
 
 @media screen and (max-width: 580px) {
-  .footer__menu--list .footer__menu--list-item:not(:last-child) {
+  .footer__menu--list-item:not(:last-child) {
     margin-right: 25px;
   }
 }
 
 @media screen and (max-width: 365px) {
-  .footer__menu--list .footer__menu--list-item:not(:last-child) {
+  .footer__menu--list-item:not(:last-child) {
     margin-right: 20px;
   }
 }
 
-.footer__menu--list .footer__menu--list-item .footer__menu--list-link {
+.footer__menu--list-item .footer__menu--list-link {
   font-family: 'Lato', 'Gill', sans-serif;
   color: #FFFFFF;
 }
 
-.footer__menu--list .footer__menu--list-item .footer__menu--list-link:hover {
+.footer__menu--list-item .footer__menu--list-link:hover {
   opacity: 0.7;
 }
 
@@ -1709,11 +1808,11 @@ index.html
   }
 }
 
-.footer__sns-link .footer__sns-link--item:hover {
+.footer__sns-link--item:hover {
   opacity: 0.7;
 }
 
-.footer__sns-link .footer__sns-link--item:not(:last-child) {
+.footer__sns-link--item:not(:last-child) {
   margin-right: 12px;
 }
 

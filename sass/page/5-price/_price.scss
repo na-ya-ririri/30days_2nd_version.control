@@ -18,9 +18,8 @@
           @include heading-line;
         }
       } //.price__heading
-  } //.price__inner
-} //.price
-    .price__inner--wrapper {
+  } //.inner
+    &__inner--wrapper {
       width: 1088px;
       margin: 0 auto;
       display: flex;
@@ -35,7 +34,7 @@
         align-items: center;
       }
     } //.price__inner--wrapper
-      .price__wrapper--img {
+      &__wrapper--img {
         .price-img {
           margin-right: 122px;
           @include mqTAB-PRICE {
@@ -43,17 +42,17 @@
           }
         }
       } //.price__wrapper--img
-      .price__wrapper--table {
+      &__wrapper--table {
         @include mqTAB-PRICE {
           margin: 0 auto;
         }
+      } //.price__wrapper--table
         .price-table-wrap {
           @include mqTAB-PRICE {
             width: 100%;
             margin: 0 auto;
           }
         } //.price-table-wrap
-      } //.price__wrapper--table
           .price-table {
             border: 1px solid $color-blog-border;
             border-collapse: collapse;
@@ -110,7 +109,7 @@
               width: 90%;
               margin: 0 auto;
             }
-            .price-table-contact__text {
+            &__text {
               font-size: 1.57rem;
               line-height: 2.6rem;
               color: $color-black;
@@ -128,8 +127,8 @@
               }
             }
           } //.price-table-contact
-      //   } //.price-table-wrap .price-table-wrap以下5つの閉じカッコをネスト整理のために↑に移動
+        // } //.price-table-wrap
       // } //.price__wrapper--table
     // } //.price__inner--wrapper
-//   } //.price__inner
-// } //.price
+  // } //.inner
+} //.price

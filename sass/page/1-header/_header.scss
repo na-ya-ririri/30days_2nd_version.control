@@ -15,11 +15,10 @@
     height: 100px;
     align-items: center;
   } //.flex
-  .nav__inner {
+  &__inner {
     @include inner;
   } //.nav__inner
-} //.nav
-    .nav__logo {
+    &__logo {
       @include mqXS {
         margin-left: 1rem;
       }
@@ -36,7 +35,7 @@
         margin-left: 2rem;
       }
     }
-    .nav__list {
+    &__list {
       @include mqXS{
         display: none;
       }
@@ -52,39 +51,40 @@
       @include mqTAB{
         margin-right: 2rem;
       }
-      .nav__list--item {
-        display: inline-block;
-        margin-right: 32.5px; 
-        &:nth-child(5) {
-          margin-right: 0;
-        }
-        .nav-hover {
-          display: inline-block;
-          color: $color-white;
-          font-family: 'Lato', 'Gill', sans-serif;
-          font-size: 1.6rem;
-          line-height: 2.6rem;
-          /* padding-bottom: 4.5px; //文字と下線に隙間を作る←他のメニューより上にずれる:line-heightを設定してなかったのが原因！ */
-          position: relative;
-          /* transition: 0.2s; 不要っぽいので一旦コメントアウト */
-          &::after {
-            position: absolute;
-            content: '';
-            width: 0;
-            height: 3px;
-            bottom: -2px;
-            left: 0;
-            background: $color-red;
-            transition: width 0.3s; /* プロパティを指定する */
-          }
-          &:hover::after {
-            width: 100%;
-          }
-        } //.nav-hover
-      } //.nav__list--item
     } //.nav__list
-//   } //.nav__inner .nav__innerと.navの閉じカッコをネスト整理のために↑に移動
-// } //.nav
+    &__list--item {
+      display: inline-block;
+      margin-right: 32.5px; 
+      &:nth-child(5) {
+        margin-right: 0;
+      }
+      .nav-hover {
+        display: inline-block;
+        color: $color-white;
+        font-family: 'Lato', 'Gill', sans-serif;
+        font-size: 1.6rem;
+        line-height: 2.6rem;
+        /* padding-bottom: 4.5px; //文字と下線に隙間を作る←他のメニューより上にずれる:line-heightを設定してなかったのが原因！ */
+        position: relative;
+        /* transition: 0.2s; 不要っぽいので一旦コメントアウト */
+        &::after {
+          position: absolute;
+          content: '';
+          width: 0;
+          height: 3px;
+          bottom: -2px;
+          left: 0;
+          background: $color-red;
+          transition: width 0.3s; /* プロパティを指定する */
+        }
+        &:hover::after {
+          width: 100%;
+        }
+      } //.nav-hover
+    } //.nav__list--item
+    // } //.nav__list ネスト整理のため移動
+  // } //.nav__inner
+} //.nav
 /* カレント表示用のスタイル。あとで付与するクラスなのでここに記述した。 */
 /* (.current{~ という書き方ではダメで、↓のようにjqueryで指定した、親要素からの書き方で書く) */
 #current-nav li a.current {
