@@ -164,6 +164,11 @@
     @content;
   }
 }
+@mixin mqVOICE {
+  @media #{map-get($breakpoints, voice)}{
+    @content;
+  }
+}
 @mixin mqSP {
   @media #{map-get($breakpoints, sp)}{
     @content;

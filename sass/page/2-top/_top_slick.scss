@@ -34,6 +34,7 @@
     -ms-transform : translateX(-50%);
     width: 100%;
     text-align: center;
+    z-index: 999; /* ここを追加してテキストが前面に出るようにした */
     .top__catch {
       font-size: 6.8rem;
       line-height: 10.8rem;
@@ -104,8 +105,9 @@
     height: 75px;
     z-index: 999; /* prevボタンのみうまく表示されなかったのを解消 参考：https://travelogue.jp/blog/archives/4757.html*/
     cursor: pointer;
-    @include mqSP-FOOTER {
-      display: none;
+    @include mqVOICE {
+      width: 35px;
+      height: 35px;
     }
   }
   .prev-arrow {

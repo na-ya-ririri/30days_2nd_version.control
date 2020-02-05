@@ -311,6 +311,8 @@ index.html
   -ms-transform: translateX(-50%);
   width: 100%;
   text-align: center;
+  z-index: 999;
+  /* ここを追加してテキストが前面に出るようにした */
 }
 
 .slick-container .inner .top__catch {
@@ -444,9 +446,10 @@ index.html
   cursor: pointer;
 }
 
-@media screen and (max-width: 580px) {
+@media screen and (max-width: 720px) {
   .slick-container .slide-arrow {
-    display: none;
+    width: 35px;
+    height: 35px;
   }
 }
 
@@ -1268,6 +1271,20 @@ index.html
   /* フォント変更後、あまりにずれていたのでbottomを60pxから変更した */
 }
 
+@media screen and (max-width: 800px) {
+  .contact-form--wrapper {
+    padding: 60px 35px 52px;
+    /* レスポンシブしたときに他のセクションとpadding値がずれているのを調整 */
+  }
+}
+
+@media screen and (max-width: 580px) {
+  .contact-form--wrapper {
+    padding: 60px 20px 52px;
+    /* こちら(breakpointが小さい方)を下に記述しないと効かないので注意 */
+  }
+}
+
 .contact-form {
   font-size: 1.8rem;
   line-height: 2.9rem;
@@ -1548,24 +1565,11 @@ index.html
   /* □と文章(項目)の間の余白 */
 }
 
-@media screen and (max-width: 321px) {
-  .contact-form__privacy .inputs-checkbox + span {
-    padding: 0 0 0 43px;
-  }
-}
-
 .contact-form__privacy .inputs-checkbox + span::before {
   border: 1px solid #707070;
   height: 30px;
   top: -22px;
   width: 30px;
-}
-
-@media screen and (max-width: 321px) {
-  .contact-form__privacy .inputs-checkbox + span::before {
-    height: 25px;
-    width: 25px;
-  }
 }
 
 .contact-form__privacy .inputs-checkbox + span::after {
@@ -1585,13 +1589,6 @@ index.html
   /* 数値でないと表示されない。100%はダメ */
 }
 
-@media screen and (max-width: 321px) {
-  .contact-form__privacy .inputs-checkbox + span::after {
-    height: 25px;
-    width: 25px;
-  }
-}
-
 .contact-form__privacy .privacy-text {
   font-size: 1.6rem;
   line-height: 2.6rem;
@@ -1600,7 +1597,7 @@ index.html
 
 @media screen and (max-width: 321px) {
   .contact-form__privacy .privacy-text {
-    font-size: 1.3rem;
+    font-size: 1.5rem;
   }
 }
 
@@ -1630,12 +1627,6 @@ index.html
   left: -3px;
   /* perfectpixelで合わせると必要 */
   position: relative;
-}
-
-@media screen and (max-width: 321px) {
-  .contact-form__button .submit-btn {
-    left: -2rem;
-  }
 }
 
 .contact-form__button .submit-btn::after {
