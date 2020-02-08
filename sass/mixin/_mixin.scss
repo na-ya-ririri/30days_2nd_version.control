@@ -7,13 +7,13 @@
   margin: 0 auto;
 }
 
-// .slide1~5
-@mixin slide {
-  width: 100%;
-  background-size: cover;
-  height: 700px;
-  position: relative; /* 位置調整 */
-}
+// // .slide1~5
+// @mixin slide {
+//   width: 100%;
+//   background-size: cover;
+//   height: 700px;
+//   position: relative; /* 位置調整 */
+// } ←divに対してbackgroundで画像指定していた際の記述
 
 // .top__catch
 @mixin top-catch ($fontSize, $marginBottom) {
@@ -171,6 +171,11 @@
 }
 @mixin mqSP {
   @media #{map-get($breakpoints, sp)}{
+    @content;
+  }
+}
+@mixin mqSP-DRAWER {
+  @media #{map-get($breakpoints, sp-drawer)}{
     @content;
   }
 }
