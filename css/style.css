@@ -211,7 +211,8 @@ index.html
   width: 100%;
 }
 
-.nav-responsive, .overlay, .drawer-menu {
+.nav-responsive, .drawer-menu {
+  /* .overlay,を削除 */
   display: none;
 }
 
@@ -291,7 +292,6 @@ index.html
     bottom: 0;
   }
   .overlay {
-    display: block;
     width: 100%;
     height: 100vh;
     position: fixed;
@@ -309,7 +309,7 @@ index.html
     position: fixed;
     top: 0;
     right: 0;
-    z-index: 9999;
+    z-index: 99999;
     -webkit-transform: translateX(200px);
             transform: translateX(200px);
     /* ドロワーメニューの幅分、右に隠す */
@@ -1888,6 +1888,14 @@ index.html
 }
 
 /* モーダル */
+.fixed {
+  /* モーダル表示時に背景をスクロールさせないためのクラス(jsでbodyに付与) */
+  position: fixed;
+  width: 100%;
+  height: 100%;
+  left: 0;
+}
+
 .modal-overlay {
   position: fixed;
   width: 100%;
@@ -2184,6 +2192,9 @@ index.html
     -webkit-justify-content: center;
         -ms-flex-pack: center;
             justify-content: center;
+    -webkit-flex-wrap: wrap;
+        -ms-flex-wrap: wrap;
+            flex-wrap: wrap;
     margin: 0 0 30px 0;
   }
 }

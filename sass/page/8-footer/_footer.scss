@@ -52,6 +52,7 @@
       margin: 7px 224px 0 159px;
       @include mqTAB-FOOTER {
         justify-content: center;
+        flex-wrap: wrap;
         margin: 0 0 30px 0;
       }
       &-item {
